@@ -7,15 +7,17 @@ public class Restaurant {
     private String address;
     private String image_url;
     private String url;
+    private String id;
     
 
-    public Restaurant(String name, double latitude, double longitude, String address, String image_url, String url) {
+    public Restaurant(String name, double latitude, double longitude, String address, String image_url, String url, String id) {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
         this.address = address;
         this.image_url = image_url;
         this.url = url;
+        this.id = id;
     }
 
     public String getName() {
@@ -40,5 +42,9 @@ public class Restaurant {
     
     public String getUrl() {
     	return url;
+    }
+    
+    public String getID() {
+    	return id;
     }
 }

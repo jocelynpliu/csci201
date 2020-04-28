@@ -69,11 +69,12 @@ public class YelpWrapper {
             String state = (String) location.get("state");
             String zip_code = (String) location.get("zip_code");
             String restaurantAddress = address1 + " " + city + ", " + state + " " + zip_code;
+            String id = (String) ((JSONObject) restaurant).get("id");
             
             String image_url = (String) ((JSONObject) restaurant).get("image_url");
             String url = (String) ((JSONObject) restaurant).get("url");
             
-            Restaurant r = new Restaurant(restaurantName, latitude, longitude, restaurantAddress, image_url, url);
+            Restaurant r = new Restaurant(restaurantName, latitude, longitude, restaurantAddress, image_url, url, id);
             restaurants.add(r);
         }
         

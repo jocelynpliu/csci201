@@ -11,6 +11,9 @@
 	</head>
 	
 	<body>
+	<%
+		String ID = request.getParameter("restaurantID");
+	%>
 	    <div class="bg-white border-bottom box-shadow">
 	      <div class="container d-flex flex-column flex-md-row align-items-center py-4">
 	      	<h1 class="display-4 mr-md-auto font-weight-normal">
@@ -74,6 +77,7 @@
 	    <br>
 	    <div class="container">
 			<h3 class="py-3">Restaurant Name</h3>
+			<h2>ID: <%=ID%></h2>
 			<hr>
 		</div>
 		<br>

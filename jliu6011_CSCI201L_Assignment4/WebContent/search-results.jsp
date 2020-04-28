@@ -202,16 +202,19 @@
 				String restaurantAddress = "";
 				String restaurantUrl = "";
 				String restaurantImgUrl = "";
+				String restaurantID = "";
 
 				Restaurant r = restaurants.get(i);
 				restaurantName = r.getName();
 				restaurantAddress = r.getAddress();
 				restaurantUrl = r.getUrl();
 				restaurantImgUrl = r.getImageUrl();
+				restaurantID = r.getID();
 	%>
 	<form class="container" novalidate method="POST" action="details.jsp">
 		<div class="row py-3">
 			<div class="col-4 px-4">
+			 	<input type="hidden" id="restaurantID" name="restaurantID" value=<%=restaurantID%>>
 				<input type="image" id="restaurantThumbnail" class="img-fluid rounded center-block"
 						src="<%=restaurantImgUrl%>" alt="Restaurant image" class="rounded">
 			</div>
