@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+	font-family: 'Helvetica'
+}
+
+.trimText {
+	white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+}
+
+#logo {
+	color: #BD2031;
+	font-family: 'Lobster', cursive;
+	font-size: 120%;
+}
+
+#overlay {
+	position: fixed; /* Sit on top of the page content */
+	display: none; /* Hidden by default */
+	width: 50%; /* Full width (cover the whole page) */
+	height: 50%; /* Full height (cover the whole page) */
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	/* Black background with opacity */
+	z-index: 2;
+	/* Specify a stack order in case you're using a different order for other elements */
+}
+
+#search {
+	height: 100%;
+}
+
+#restaurantThumbnail {
+	object-fit: cover;
+	width: 300px;
+	height: 300px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
