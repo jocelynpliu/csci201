@@ -209,11 +209,11 @@
 				restaurantUrl = r.getUrl();
 				restaurantImgUrl = r.getImageUrl();
 	%>
-	<form class="container" novalidate method="POST" action="search-results.jsp">
+	<form class="container" novalidate method="POST" action="details.jsp">
 		<div class="row py-3">
 			<div class="col-4 px-4">
-				<img id="restaurantThumbnail" class="img-fluid rounded center-block"
-					src="<%=restaurantImgUrl%>" alt="Restaurant image" class="rounded">
+				<input type="image" id="restaurantThumbnail" class="img-fluid rounded center-block"
+						src="<%=restaurantImgUrl%>" alt="Restaurant image" class="rounded">
 			</div>
 			<div class="col-8">
 				<h4><%=restaurantName%></h4>
