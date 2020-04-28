@@ -193,23 +193,15 @@
 	<!-- Restaurant Holder */ -->
 	<%
 		try {
-
 			Vector<Restaurant> restaurants = new Vector<Restaurant>();
 			restaurants = YelpWrapper.getRestaurants(name, latitude, longitude, sortingoption);
 			for (int i = 0; i < restaurants.size(); i++) {
-
-				String restaurantName = "";
-				String restaurantAddress = "";
-				String restaurantUrl = "";
-				String restaurantImgUrl = "";
-				String restaurantID = "";
-
 				Restaurant r = restaurants.get(i);
-				restaurantName = r.getName();
-				restaurantAddress = r.getAddress();
-				restaurantUrl = r.getUrl();
-				restaurantImgUrl = r.getImageUrl();
-				restaurantID = r.getID();
+				String restaurantName = r.getName();
+				String restaurantAddress = r.getAddress();
+				String restaurantUrl = r.getUrl();
+				String restaurantImgUrl = r.getImageUrl();
+				String restaurantID = r.getID();
 	%>
 	<form class="container" novalidate method="POST" action="details.jsp">
 		<div class="row py-3">

@@ -34,6 +34,11 @@ public class YelpWrapper {
         return url;
 //                + 
     }
+    
+    private static String buildDetailURL(String ID) {
+		return "https://api.yelp.com/v3/businesses/" + ID;
+          
+    }
 
     private static String getRequest(String urlString) throws IOException {
         URL url = new URL(urlString);
@@ -74,11 +79,28 @@ public class YelpWrapper {
             String image_url = (String) ((JSONObject) restaurant).get("image_url");
             String url = (String) ((JSONObject) restaurant).get("url");
             
-            Restaurant r = new Restaurant(restaurantName, latitude, longitude, restaurantAddress, image_url, url, id);
+            Restaurant r = new Restaurant(restaurantName, restaurantLat, restaurantLong, restaurantAddress, image_url, url, id);
             restaurants.add(r);
         }
         
         return restaurants;
+        // Return null if restaurant not found
+    }
+    
+    
+    // need Address, Phone #, Cuisine, Price Range, and Rating
+    public static DetailedRestaurant getDetailedRestaurant(String ID) throws IOException, ParseException {
+        // Get JSON string
+        String jsonString = getRequest(buildDetailURL(ID));
+
+        // Parse the JSON using JSON.Simple
+        JSONParser parser = new JSONParser();
+        JSONObject data = (JSONObject) (parser.parse(jsonString));
+
+        String restaurantName = (String) (data.get("name"));
+        
+        DetailedRestaurant d = new DetailedRestaurant(restaurantName);
+        return d;
         // Return null if restaurant not found
     }
 }
