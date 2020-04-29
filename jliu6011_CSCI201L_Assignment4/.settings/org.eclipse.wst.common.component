@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-        
-    <wb-module deploy-name="jliu6011_CSCI201L_Assignment4">
-                
-        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
-                
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-                
-        <property name="java-output-path" value="/jliu6011_CSCI201L_Assignment4/build/classes"/>
-        <property name="context-root" value="jliu6011_CSCI201L_Assignment4"/>
             
-    </wb-module>
     
+    <wb-module deploy-name="jliu6011_CSCI201L_Assignment4">
+                        
+        
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="mysql-connector-java-8.0.20.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/jocelynliu/Downloads/mysql-connector-java-8.0.20/mysql-connector-java-8.0.20.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                        
+        
+        <property name="java-output-path" value="/jliu6011_CSCI201L_Assignment4/build/classes"/>
+                
+        <property name="context-root" value="jliu6011_CSCI201L_Assignment4"/>
+                    
+    
+    </wb-module>
+        
+
 </project-modules>
