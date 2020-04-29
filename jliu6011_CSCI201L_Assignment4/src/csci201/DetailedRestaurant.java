@@ -7,13 +7,13 @@ public class DetailedRestaurant {
 	private String phone;
 	private String cuisine;
 	private String price;
-	private Double rating;
+	private int rating;
 	
 	public DetailedRestaurant(String name) {
 		this.name = name;
 	}
 	
-	public DetailedRestaurant(String name, String img_url, String address, String phone, String cuisine, String price, Double rating) {
+	public DetailedRestaurant(String name, String img_url, String address, String phone, String cuisine, String price, int rating) {
 		this.name = name;
 		this.img_url = img_url;
 		this.address = address;
@@ -47,7 +47,7 @@ public class DetailedRestaurant {
 		return price;
 	}
 	
-	public Double getRating() {
+	public int getRating() {
 		return rating;
 	}
 }

@@ -9,8 +9,8 @@ body {
 
 .trimText {
 	white-space: nowrap;
-    overflow: hidden; 
-    text-overflow: ellipsis
+	overflow: hidden;
+	text-overflow: ellipsis
 }
 
 #map {
@@ -52,4 +52,3 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-

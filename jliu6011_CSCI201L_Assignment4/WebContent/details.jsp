@@ -7,7 +7,13 @@
 <title>Details</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
+<link href="style.css" rel="stylesheet">
+<link href="./assets/fonts/css/all.css" rel="stylesheet">
+<style>
+.checked {
+  color: orange;
+}
+</style>
 <%@ page
 	import="csci201.*, java.io.*, java.util.*, org.json.simple.parser.ParseException"%>
 </head>
@@ -41,16 +47,7 @@
 			</div>
 			<div class="col-1">
 				<button type="button" class="btn btn-danger btn-block">
-					<svg class="bi bi-search" width="1em" height="1em"
-						viewBox="0 0 16 16" fill="currentColor"
-						xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd"
-							d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
-							clip-rule="evenodd" />
-							<path fill-rule="evenodd"
-							d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
-							clip-rule="evenodd" />
-						</svg>
+					<i class="fas fa-search"></i>
 				</button>
 			</div>
 			<div class="col-2 text-center">
@@ -78,13 +75,7 @@
 			</div>
 			<div class="col-4">
 				<button type="button" class="btn btn-primary btn btn-block">
-					<svg class="bi bi-geo-alt" width="1em" height="1em"
-						viewBox="0 0 16 16" fill="currentColor"
-						xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd"
-							d="M8 16s6-5.686 6-10A6 6 0 002 6c0 4.314 6 10 6 10zm0-7a3 3 0 100-6 3 3 0 000 6z"
-							clip-rule="evenodd" />
-						</svg>
+					<i class="fas fa-map-marker-alt"></i>
 					Google Maps (Drop a pin!)
 				</button>
 			</div>
@@ -127,6 +118,8 @@
 				<br>
 				<h5>Price: <%=restaurantPrice%></h5>
 				<br>
+				<h5>Rating: </h5>
+				<i class="far fa-star"></i>
 			</div>
 		</div>
 	</div>

@@ -115,7 +115,7 @@ public class YelpWrapper {
         String cuisine = (String) category.get("title");
         
         String price = (String) data.get("price");
-        Double rating = (Double) data.get("rating");
+        int rating = (int) Math.round((Double)  data.get("rating"));
          
         DetailedRestaurant d = new DetailedRestaurant(name, image_url, address, phone, cuisine, price, rating);
         return d;
