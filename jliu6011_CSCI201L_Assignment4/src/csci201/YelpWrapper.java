@@ -97,9 +97,27 @@ public class YelpWrapper {
         JSONParser parser = new JSONParser();
         JSONObject data = (JSONObject) (parser.parse(jsonString));
 
-        String restaurantName = (String) (data.get("name"));
+        String name = (String) data.get("name");
+        String image_url = (String) data.get("image_url");
         
-        DetailedRestaurant d = new DetailedRestaurant(restaurantName);
+        JSONObject location = (JSONObject) (data.get("location"));
+        JSONArray display_address = (JSONArray) location.get("display_address");
+        String address = "";
+        for (int i = 0; i < display_address.size(); i++) {
+        	address += (String) display_address.get(i) + " ";
+        }
+        
+        String phone = (String) (data.get("display_phone"));
+        
+//        JSONArray data = (JSONArray) ((JSONObject) parser.parse(jsonString)).get("businesses");
+        JSONArray categories = (JSONArray) data.get("categories");
+        JSONObject category = (JSONObject) categories.get(0);
+        String cuisine = (String) category.get("title");
+        
+        String price = (String) data.get("price");
+        Double rating = (Double) data.get("rating");
+         
+        DetailedRestaurant d = new DetailedRestaurant(name, image_url, address, phone, cuisine, price, rating);
         return d;
         // Return null if restaurant not found
     }

@@ -91,24 +91,42 @@
 		</div>
 	</div>
 	<br>
+	
 	<!-- Restaurant Holder */ -->
 	<%
 		try {
 			DetailedRestaurant d = YelpWrapper.getDetailedRestaurant(ID);
 			String restaurantName = d.getName();
-
+			String img_url = d.getImageURL();
+			String restaurantAddress = d.getAddress();
+			String restaurantPhone = d.getPhone();
+			String restaurantCuisine = d.getCuisine();
+			String restaurantPrice = d.getPrice();
 				
 	%>
+	<!-- Results for "" -->
+	<div class="container">
+		<h3 class="py-3">
+			<%=restaurantName%>
+		</h3>
+		<hr>
+	</div>
 	<div class="container">
 		<div class="row py-3">
 			<div class="col-4 px-4">
-				<img src="https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-260nw-1037719192.jpg"
+				<img src=<%=img_url%>
 					id="restaurantThumbnail" class="img-fluid rounded center-block"
 					alt="Restaurant image" class="rounded">
 			</div>
 			<div class="col-8">
-				<h4><%=restaurantName%></h4>
-				<h5 class="py-3">ADDRESS PLACEHOLDER</h5>
+				<h5>Address: <%=restaurantAddress%></h5>
+				<br>
+				<h5>Phone No: <%=restaurantPhone%></h5>
+				<br>
+				<h5>Cuisine: <%=restaurantCuisine%></h5>
+				<br>
+				<h5>Price: <%=restaurantPrice%></h5>
+				<br>
 			</div>
 		</div>
 	</div>
