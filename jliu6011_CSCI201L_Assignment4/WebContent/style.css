@@ -4,13 +4,13 @@
 	url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body {
-	font-family: 'Helvetica'
+	font-family: 'Helvetica';
 }
 
 .trimText {
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis
+	text-overflow: ellipsis;
 }
 
 #map {
@@ -19,7 +19,7 @@ body {
 }
 
 #logo {
-	color: #BD2031;
+	color: #990000;
 	font-family: 'Lobster', cursive;
 	font-size: 120%;
 }

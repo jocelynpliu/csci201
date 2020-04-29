@@ -74,7 +74,7 @@
 					id="longitude" placeholder="Longitude">
 			</div>
 			<div class="col-4">
-				<button type="button" class="btn btn-primary btn btn-block">
+				<button type="button" class="btn btn-primary btn-block">
 					<i class="fas fa-map-marker-alt"></i>
 					Google Maps (Drop a pin!)
 				</button>
@@ -93,9 +93,8 @@
 			String restaurantPhone = d.getPhone();
 			String restaurantCuisine = d.getCuisine();
 			String restaurantPrice = d.getPrice();
-				
+			int restaurantRating = d.getRating();
 	%>
-	<!-- Results for "" -->
 	<div class="container">
 		<h3 class="py-3">
 			<%=restaurantName%>
@@ -118,8 +117,19 @@
 				<br>
 				<h5>Price: <%=restaurantPrice%></h5>
 				<br>
-				<h5>Rating: </h5>
-				<i class="far fa-star"></i>
+				<h5>Rating: 
+					<% for (int i = 0; i < restaurantRating; i++) {%>
+						<i class="fas fa-star checked"></i>
+					<% }
+						if (restaurantRating < 5) {
+							for (int i = 0; i < (5 - restaurantRating); i++) { %>
+								<i class="far fa-star"></i>
+					<%		}
+						}
+					%>
+					
+				</h5>
+				
 			</div>
 		</div>
 	</div>
@@ -130,28 +140,38 @@
 
 		}
 	%>
-
-	<!-- Bootstrap core JavaScript
-	    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-	</script>
-	<script src="../../assets/js/vendor/popper.min.js"></script>
-	<script src="../../dist/js/bootstrap.min.js"></script>
-	<script src="../../assets/js/vendor/holder.min.js"></script>
-	<script>
-		Holder.addTheme('thumb', {
-			bg : '#55595c',
-			fg : '#eceeef',
-			text : 'Thumbnail'
-		});
-	</script>
+	<br>
+	<!-- Favorites & Reservation Buttons -->
+	<div class="container">
+		<div class="row pb-2">
+			<button type="button" class="btn btn-warning btn-lg btn-block"><i class="fas fa-star"></i> Add to Favorites</button>
+		</div>
+		<div class="row">
+			<button type="button" class="btn btn-danger btn-lg btn-block"><i class="far fa-calendar-check"></i> Add Reservation</button>
+		</div>
+	</div>
+	<br><br>
+	
+	<!-- Reservation Form -->
+	<div class="container">
+		<div class="form-row">
+			<div class="col-6"><input type="date" class="form-control" id="reservationDate" placeholder="Date"></div>
+			<div class="col-6"><input type="time" class="form-control" id="reservationTime" placeholder="Time"></div>
+		</div>
+		<br>
+		<div class="form-row">
+			<textarea class="form-control" rows="5" id="resNotes" placeholder="Reservation Notes"></textarea>
+		</div>
+		<br>
+		<div class="row">
+			<button type="button" class="btn btn-danger btn-lg btn-block"><i class="far fa-calendar-check"></i> Submit Reservation</button>
+		</div>
+	</div>
+	
+	<div class="container mt-5">
+		<p class="text-center pt-5">Jocelyn Liu Assignment #4</p>
+	</div>
+	
 </body>
 
 </html>
